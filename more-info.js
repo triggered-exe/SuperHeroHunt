@@ -15,11 +15,15 @@
 
     let html = document.getElementById("hero-info");
 
-    const params = new URLSearchParams(window.location.search);
-    const data = params.get('data');
-    const hero = JSON.parse(decodeURIComponent(data));
-    console.log(hero);
+    
+ 
        function loadInfo(){
+        let  hero = JSON.parse(localStorage.getItem("get-hero-info"));
+        if(hero === undefined){
+            console.log(error);
+            return;
+        }
+        
         let isFavourite = "";
         if (localStorage.getItem(hero.id) != undefined) {
             isFavourite = "checked";
@@ -78,13 +82,16 @@
             })
         })
         // Event for getting hero info in new page
-    hero_data.forEach(hero => {
-        let more_info = document.getElementById("more-info" + hero.id)
-        more_info.addEventListener("click", () => {
-            const url = `more-info.html?data=${encodeURIComponent(JSON.stringify(hero))}`;
-            window.open(url, '_self');
+        hero_data.forEach(hero => {
+            let more_info = document.getElementById("more-info" + hero.id)
+            more_info.addEventListener("click", () => {
+                //setting the hero info in local storage so that we can access in more-info.js
+                
+                localStorage.setItem("get-hero-info",JSON.stringify(hero));
+                const url = `more-info.html`;
+                window.open(url, '_blank');
+            })
         })
-    })
     }
     //function to load favourie heroes on the screen
     function loadFavourite() {

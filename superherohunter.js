@@ -103,8 +103,11 @@
         hero_data.forEach(hero => {
             let more_info = document.getElementById("more-info" + hero.id)
             more_info.addEventListener("click", () => {
-                const url = `more-info.html?data=${encodeURIComponent(JSON.stringify(hero))}`;
-                window.open(url, '_self');
+                //setting the hero info in local storage so that we can access in more-info.js
+                
+                localStorage.setItem("get-hero-info",JSON.stringify(hero));
+                const url = `more-info.html`;
+                window.open(url, '_blank');
             })
         })
     
