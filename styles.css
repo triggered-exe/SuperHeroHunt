@@ -1,0 +1,248 @@
+/* css file for index.html and more-info.html */
+*{
+    box-sizing: border-box;
+}
+body, html {
+    margin: 0;
+    padding: 0; 
+  }
+.background-wrapper{
+
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./marvel.jpg");
+    
+    /* Set the background to fill the whole screen */
+    position: fixed;
+    top: 5vw;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    /* Set a background color as a fallback */
+    background-repeat: no-repeat; 
+    z-index: -1;
+    opacity: 0.9;
+    overflow-y: scroll;
+}
+  header{
+   
+    text-align: center;
+    color: black;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+ 
+}
+#nav-bar{
+    display: flex;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: auto;
+    height: 5vw;
+    font-size: 2.5vw;
+    background-color: rgb(161 18 255);
+    z-index: 1;
+    
+}
+#title{
+    color: #d6ff00;
+    font-size: 3.5vw;
+    font-weight: 600 ;
+}
+#home{
+    display: inline-block;
+    color: #d6ff00;
+    border: 1px solid #24cbacfa;
+    background-color: #fffdf936;
+    border-radius: 6px;
+}
+#fav{
+    display: inline-block;
+    color: #d6ff00;
+    border: 1px solid #24cbacfa;
+    background-color: #fffdf936;
+    border-radius: 6px;
+}
+#search-container{
+    position: relative;
+    top: 8vw;
+}
+#search-container input{
+    width: 40%;
+    height: 4vh;
+    border: 1.5px solid rgb(161, 49, 161);
+    border-radius: 3%;;
+    box-shadow: 0 0 3px #9e10c9;
+    font-size: 2vw;
+    background-color: #eeeded85;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+    color: #eeff00;
+    font-weight: 500;
+    text-align: center;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+
+    
+    font-size: 1.5vw;
+    padding-bottom: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #e100ff;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  #search-container input:focus::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #eeff00;
+  }
+  #search-container input:focus
+  {
+      border: 1px solid rgb(197, 228, 23);
+      box-shadow: 0 0 3px #cbd810;
+      outline-offset: 0px;
+      outline: none;
+  }
+/* main container which will display hero  */
+#main{
+    display: flex;
+    margin-top: 12vw;
+    width: 100vw;
+    margin-left: 0px;
+}
+/* making ul for displaying all heroes */
+#main ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-left: -1vw;
+    width: 100%; 
+}
+#main ul li{ 
+    text-align: center;
+    width: 12vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    display: block;
+    margin-bottom: 2vw;
+    border-radius: 18px;
+    background-color: hsla(0, 0%, 100%, 0.62);
+    box-shadow: -2px -2px 15px 8px rgb(255 206 0 / 38%);
+    overflow: hidden; 
+}
+#main ul li img{
+    display: block;
+    aspect-ratio: 9 / 10;
+    width: 100%;
+    border-radius: 18px;
+}
+/* hero details inside list */
+.hero_info{
+    display: flex;
+    flex-direction: column;
+}
+.hero-name{
+    color: #9e10c9;
+    font-size: 1.5vw;
+    font-weight: 600;
+    white-space: nowrap; 
+}
+/* container to store both .favourite-button and .unFavourite  */
+.fav-buttons{
+    display: flex;
+    height: 3vw;
+}
+.favourite-button {
+    display: flex;
+    flex-grow: 3;
+    background-color: #d12323;
+    border: 1px solid #07050536;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 1.6vw;
+    text-align: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+  .favourite-button label {
+    margin-left: 5px;
+    vertical-align: center;
+  }
+
+  /* Styling for the checkbox */
+  .favourite-button input[type="checkbox"] {
+       display: none;
+  }
+
+ /* Hide default checkbox */
+ .favourite-button input[type="checkbox"] + label::before {
+    content: "\2713"; /* Checkmark character */
+    margin-right: 5px;
+  }
+
+/* Change background of the parent container when checkbox is checked */
+ .checked {
+    background-color: #61ff61; /* Green color */
+  }
+   
+.unFavourite{
+    display: flex;
+    flex-grow: 1;
+    background-color: #d12323;
+    border: 1px solid #07050536;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    justify-content: center;
+}
+.unFavourite i {
+    display: block;
+    font-size: 1.5vw;
+    color: rgb(0, 0, 0);
+    margin-top: 0.7vw;
+}
+
+  /* media queries if viewport width is less than 960px */
+@media (max-width: 959px) {
+    #main ul li{ 
+        width: 20vw;
+    }
+    #main ul li img{
+        aspect-ratio: 9 / 10;
+    }
+  }
+  /* media queries if viewport width is less than 485px */
+@media (max-width: 484px) {
+    #search-container input{
+        font-size: 5vw;
+    }
+    #nav-bar{
+        height: 8vw;
+        font-size: 4vw;   
+    }
+    #search-container{
+        top: 15vw;
+    }
+    ::placeholder { 
+        font-size: 5vw;
+      }
+
+    #main ul li{ 
+        margin-top: 21px;
+        margin-left: -20px;
+        width: 70vw;
+    }
+    #main ul li img{
+        aspect-ratio: 9 / 7;
+    }
+    .fav-buttons{
+        display: flex;
+        height: 5vw;
+    }
+    .favourite-button {
+        font-size: 3.6vw;
+      }
+      .unFavourite i{
+        font-size: 3.6vw;
+    }
+  }
+

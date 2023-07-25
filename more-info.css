@@ -1,0 +1,61 @@
+/* css file for more-info.html */
+
+#hero-info{
+    position: absolute;
+    width: 60vw;
+    margin-top: 3vw;
+    margin-left: 20vw;
+    background-color: rgba(192, 198, 201, 0.288);
+}
+#name{
+    position: relative;
+    width: 100%;
+    height: 10%;
+    margin-top: opx;
+    text-align: center;
+    line-height: 29px;
+   border: 2px solid rgba(151, 33, 151, 0.774);
+   background-color: rgba(123, 67, 187, 0.527);
+    font-size: 2.5vw;
+    color: rgb(19, 255, 255);
+}
+#info-container{
+    display: flex;
+    width:100%;
+}
+#info-container img{
+    display: block;
+    aspect-ratio: 9 / 10;
+    width: 20%;
+    margin-left: 1vw;
+    margin-top: 1vw;
+    
+}
+#titles{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1vw;
+    margin-top: 1vw;
+    justify-content: space-around;
+    color:rgb(0, 0, 0); 
+    font-size: 2vw;
+    font-weight: 1000;
+    
+}
+.title-heading{
+    font-size: 2vw;
+    font-weight: 1000;
+    margin-right: 10px;
+}
+#desc{
+   
+    margin-top: 1vw;
+    width: 100%;
+    border: 2px solid rgba(151, 33, 151, 0.774);
+    background-color: rgba(123, 67, 187, 0.418);
+    color:rgb(0, 0, 0);
+    font-size: 2vw;
+    font-weight: 1000;
+   
+    
+}
